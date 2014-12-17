@@ -1031,6 +1031,13 @@ define([
                 items.push(this.items[i]);
             }
             return items;
+        },
+
+        remove: function() {
+            var $rows = this.$find('.item-table-row');
+            this.sandbox.dom.each($rows, function($row) {
+                removeValidationFields.call(this, $row);
+            }.bind(this));
         }
     };
 });
