@@ -341,7 +341,7 @@ class ItemManager
 
             return $data['id'];
             // data must be an int
-        } elseif (!is_int($data)) {
+        } elseif ((int) $data != $data) {
             throw new MissingItemAttributeException('product.id');
         }
 
